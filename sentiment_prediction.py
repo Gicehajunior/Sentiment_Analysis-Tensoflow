@@ -16,8 +16,7 @@ next_words = 30
 
 for _ in range(next_words):
     # do some tokenization
-    tokenizer = Tokenizer()
-    token_list = tokenizer.texts_to_sequences([text_input])[0]
+    token_list = data_manipulation.tokenize_texts(text_input).texts_to_sequences([text_input])[0]
     
     # do some padding
     token_list = pad_sequences([token_list], maxlen=data_manipulation.padded_sequences[2]-1, padding='pre')
